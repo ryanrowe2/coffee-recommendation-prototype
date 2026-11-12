@@ -1,0 +1,15 @@
+{
+  "event_id": "evt_demo_001",
+  "event_type": "form_response",
+  "form_response": {
+    "form_id": "DEMO_COFFEE_FORM",
+    "token": "sample-response-001",
+    "answers": [
+      {"type": "choice", "field": {"ref": "brew_method"}, "choice": {"label": "Pour-over"}},
+      {"type": "choice", "field": {"ref": "roast_level"}, "choice": {"label": "Light"}},
+      {"type": "choices", "field": {"ref": "flavor_notes"}, "choices": {"labels": ["Fruity", "Citrus", "Floral"]}},
+      {"type": "choice", "field": {"ref": "caffeine_level"}, "choice": {"label": "Regular"}},
+      {"type": "choice", "field": {"ref": "milk_preference"}, "choice": {"label": "Black"}}
+    ]
+  }
+}

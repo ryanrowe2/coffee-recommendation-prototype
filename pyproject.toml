@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coffee-recommendation-prototype"
+version = "1.0.3"
+description = "Standalone, deterministic coffee recommendation demo with signed Typeform webhook support"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = ["Flask==3.1.3", "waitress==3.0.2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "ruff>=0.9,<1", "build>=1.2,<3", "playwright>=1.50,<2", "beautifulsoup4>=4.12,<5"]
+
+[tool.setuptools]
+packages = ["app"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+app = ["data/*.json", "templates/*.html", "static/*.css", "static/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]

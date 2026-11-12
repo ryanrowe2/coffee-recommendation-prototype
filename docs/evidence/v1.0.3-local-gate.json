@@ -1,0 +1,58 @@
+{
+  "blockers": [],
+  "mode": "strict",
+  "schema": 1,
+  "source": "scripts/verify_release.py",
+  "stages": [
+    {
+      "name": "mandatory_integration_inventory",
+      "status": "passed"
+    },
+    {
+      "exit_code": 0,
+      "name": "compile",
+      "output_tail": "",
+      "status": "passed"
+    },
+    {
+      "exit_code": 0,
+      "name": "offline_core",
+      "output_tail": "........................................................................ [ 32%]\n........................................................................ [ 65%]\n........................................................................ [ 98%]\n...                                                                      [100%]\n================================ tests coverage ================================\n_______________ coverage: platform linux, python 3.12.14-final-0 _______________\n\nName                     Stmts   Miss  Cover   Missing\n------------------------------------------------------\napp/catalog.py              73      4    95%   24, 43, 83, 87\napp/config.py               37      2    95%   29, 50\napp/preferences.py         102      9    91%   101, 155, 160, 162-164, 169, 174, 184\napp/recommendations.py      46      0   100%\napp/security.py             41      1    98%   76\napp/storage.py              99      1    99%   60\n------------------------------------------------------\nTOTAL                      398     17    96%\nRequired test coverage of 90% reached. Total coverage: 95.73%\n219 passed in 4.68s\n",
+      "status": "passed"
+    },
+    {
+      "byte_reproducible": true,
+      "expected_assets_checked": 6,
+      "name": "wheel_content",
+      "sha256": "aadd782e6f1ace390bd5b6679e400365d4b7874920daccf6e2351f73aa24f067",
+      "status": "passed",
+      "wheel_bytes": 31869
+    },
+    {
+      "exit_code": 0,
+      "name": "ruff",
+      "output_tail": "All checks passed!\n",
+      "status": "passed"
+    },
+    {
+      "exit_code": 0,
+      "name": "ruff_format",
+      "output_tail": "44 files already formatted\n",
+      "status": "passed"
+    },
+    {
+      "exit_code": 0,
+      "name": "all_tests_no_skips",
+      "output_tail": "........................................................................ [ 27%]\n........................................................................ [ 54%]\n........................................................................ [ 81%]\n................................................                         [100%]\n================================ tests coverage ================================\n_______________ coverage: platform linux, python 3.12.14-final-0 _______________\n\nName                     Stmts   Miss  Cover   Missing\n------------------------------------------------------\napp/__init__.py             24      0   100%\napp/__main__.py             17      5    71%   18-22, 26\napp/catalog.py              73      4    95%   24, 43, 83, 87\napp/config.py               37      2    95%   29, 50\napp/preferences.py         102      9    91%   101, 155, 160, 162-164, 169, 174, 184\napp/recommendations.py      46      0   100%\napp/routes.py              137      6    96%   147, 155, 181, 189, 210-211\napp/security.py             41      1    98%   76\napp/storage.py              99      1    99%   60\n------------------------------------------------------\nTOTAL                      576     28    95%\nRequired test coverage of 80% reached. Total coverage: 95.14%\n264 passed in 16.62s\n",
+      "status": "passed"
+    },
+    {
+      "exit_code": 0,
+      "name": "fresh_health",
+      "output_tail": "",
+      "status": "passed"
+    }
+  ],
+  "timestamp_utc": "2026-11-12T07:30:05.343977+00:00",
+  "verdict": "local_release_gate_passed"
+}

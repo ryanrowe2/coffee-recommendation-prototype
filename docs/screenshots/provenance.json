@@ -1,0 +1,25 @@
+{
+  "capture_date_local": "2026-11-11",
+  "timezone": "America/Los_Angeles",
+  "browser": "Chromium Headless Shell 141.0.7390.37",
+  "playwright": "1.56.0",
+  "transport": "actual loopback HTTP to Werkzeug server using app.create_app",
+  "test": "tests/test_browser_flow.py::test_real_chromium_form_result_api_and_clipboard",
+  "desktop_viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "mobile_viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "captures": {
+    "preference-entry-desktop.png": "0d39835d8ed6a79843709a68408fcbaa87b83c436cf7109d4f17c7cd879d0539",
+    "preference-entry-mobile.png": "15b4a13b58072d7ca8a45b2a7387eaf5554b149d74b48aab4dcdbfed25e3af97",
+    "preference-form.png": "50296349b74dbaf83935cbdf9b5b97755c4875e03fe6a5e9a3a7d10a7f9f4700",
+    "recommendation-cards.png": "bda8dbeb03e3b038dc3ee699c1bfbab9d8760ef73a56578d73bcb39273e9068e",
+    "recommendations-desktop.png": "6baca92e9084e78624aec7f8da75f2b2ebd9fa4f9abed2605eb250c49ca027f3",
+    "recommendations-mobile.png": "6cd428653277d0f00058416bd29377e00f070607167f0f9a204a0da246664efe"
+  },
+  "source_release": "1.0.3"
+}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Find your cup · Coffee Atlas{% endblock %}
+{% block main %}
+<section class="hero container">
+  <div class="eyebrow"><span class="eyebrow-bar"></span> AN EXPERIMENT IN PERSONALIZED COFFEE</div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1>Better coffee<br>starts with <em>you.</em></h1>
+      <p class="hero-description">Tell us what you love in a cup. Our transparent recommendation engine will find three coffees from a curated, fictional catalog—ranked for your taste.</p>
+      <div class="hero-proof"><span class="proof-circle">01</span><span>Share your preferences</span><span class="proof-arrow">→</span><span class="proof-circle">02</span><span>Discover your matches</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+       <div class="art-label">A GOOD CUP IS PERSONAL</div>
+       <div class="art-disc"><svg viewBox="0 0 300 300" role="img"><ellipse cx="150" cy="252" rx="94" ry="15" fill="#37251d" opacity=".18"/><path d="M75 92h154l-18 136c-6 35-111 37-119 0z" fill="#fff8e9"/><path d="M228 119c72-9 57 87-13 75" fill="none" stroke="#fff8e9" stroke-width="23"/><ellipse cx="151" cy="93" rx="77" ry="18" fill="#d7bc96"/><ellipse cx="151" cy="96" rx="66" ry="13" fill="#673f29"/><path d="M105 58c-15-21 9-32 0-48M149 56c-15-21 9-32 0-48M190 58c-15-21 9-32 0-48" fill="none" stroke="#f8e6c7" stroke-width="6" stroke-linecap="round" opacity=".7"/></svg></div>
+       <div class="art-bottom">SIP SLOWLY. <span>DISCOVER MORE.</span></div>
+    </div>
+  </div>
+</section>
+<section class="form-section"><div class="container form-wrap">
+  <div class="form-intro"><span class="section-kicker">01 / YOUR TASTE PROFILE</span><h2>What makes your<br><em>perfect cup?</em></h2><p>Every preference contributes to a weighted, reproducible score. No AI account or storefront connection required.</p><div class="form-side-note"><span class="side-icon">✦</span> PICK WHAT FEELS RIGHT. THERE ARE NO WRONG ANSWERS.</div></div>
+  <form class="coffee-form" action="/demo/submit" method="post" novalidate>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <input type="hidden" name="form_nonce" value="{{ form_nonce }}">
+    {% if error %}<div class="form-error" role="alert">{{ error }}</div>{% endif %}
+    <div class="field-row"><div class="field-num">01</div><div class="field-body"><label for="brew_method">How do you usually brew?</label><p class="field-hint">Your everyday ritual.</p><select id="brew_method" name="brew_method"><option value="">Choose a method</option>{% for value in ['pour-over','drip','espresso','french press','cold brew','more than one'] %}<option value="{{ value }}" {% if form.get('brew_method') == value %}selected{% endif %}>{{ value|title }}</option>{% endfor %}</select></div></div>
+    <div class="field-row"><div class="field-num">02</div><div class="field-body"><fieldset><legend>Your go-to roast?</legend><p class="field-hint">From delicate and bright to deep and full-bodied.</p><div class="pill-group">{% for value in ['light','medium','dark'] %}<label class="choice-pill"><input type="radio" name="roast_level" value="{{ value }}" {% if form.get('roast_level') == value %}checked{% endif %}><span>{{ value|title }}</span></label>{% endfor %}</div></fieldset></div></div>
+    <div class="field-row"><div class="field-num">03</div><div class="field-body"><fieldset><legend>Which tasting notes speak to you?</legend><p class="field-hint">Choose as many as you like.</p><div class="pill-group">{% for value in ['fruity','floral','chocolatey','nutty','earthy','spicy','caramel','citrus','berry'] %}<label class="choice-pill"><input type="checkbox" name="flavor_notes" value="{{ value }}" {% if value in form.get('flavor_notes', []) %}checked{% endif %}><span>{{ value|title }}</span></label>{% endfor %}</div></fieldset></div></div>
+    <div class="field-row"><div class="field-num">04</div><div class="field-body"><label for="caffeine_level">How much of a kick?</label><p class="field-hint">Find what fits your day.</p><select name="caffeine_level" id="caffeine_level"><option value="">No preference</option>{% for value in ['regular','high-caffeine','decaf'] %}<option value="{{ value }}" {% if form.get('caffeine_level') == value %}selected{% endif %}>{{ value|replace('-', ' ')|title }}</option>{% endfor %}</select></div></div>
+    <div class="field-row"><div class="field-num">05</div><div class="field-body"><fieldset><legend>How do you take it?</legend><p class="field-hint">Straight up or softened.</p><div class="pill-group">{% for value in ['black','dairy','non-dairy','other'] %}<label class="choice-pill"><input type="radio" name="milk_preference" value="{{ value }}" {% if form.get('milk_preference') == value %}checked{% endif %}><span>{{ value|replace('-', ' ')|title }}</span></label>{% endfor %}</div></fieldset></div></div>
+    <div class="field-row"><div class="field-num">06</div><div class="field-body"><label for="style_preference">Your coffee style?</label><p class="field-hint">An optional, explicit style preference used in scoring.</p><select id="style_preference" name="style_preference"><option value="">No style preference</option>{% for value in ['bright','balanced','bold'] %}<option value="{{ value }}" {% if form.get('style_preference') == value %}selected{% endif %}>{{ value|title }}</option>{% endfor %}</select></div></div>
+    <div class="field-row"><div class="field-num">07</div><div class="field-body"><label for="extra_notes">Anything else? <span class="optional">(optional)</span></label><p class="field-hint">Notes are not analyzed, scored, displayed, or saved. Only the structured selections above affect the ranking.</p><textarea id="extra_notes" name="extra_notes" maxlength="200" rows="2" placeholder="Optional feedback for your own reference; not processed">{{ form.get('extra_notes') or '' }}</textarea></div></div>
+    <div class="form-bottom"><button class="primary-btn" type="submit">Find my three coffees <span aria-hidden="true">↗</span></button><p>Free, instant &amp; fully local · Choose at least one structured preference</p></div>
+  </form>
+</div></section>
+{% endblock %}

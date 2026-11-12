@@ -1,0 +1,309 @@
+[
+  {
+    "key": "bright_sunbeam",
+    "title": "Sunbeam Citrus",
+    "handle": "sunbeam-citrus",
+    "price": "21.00",
+    "variant_id": "99000000000001",
+    "active": true,
+    "availability_type": "always",
+    "palette": "gold",
+    "traits": {
+      "brew_method": [
+        "pour-over",
+        "drip",
+        "cold brew"
+      ],
+      "flavor_notes": [
+        "citrus",
+        "fruity",
+        "floral"
+      ],
+      "roast_level": [
+        "light"
+      ],
+      "caffeine_level": [
+        "regular",
+        "high-caffeine"
+      ],
+      "milk_preference": [
+        "black",
+        "non-dairy"
+      ]
+    },
+    "style": "bright"
+  },
+  {
+    "key": "balanced_maple",
+    "title": "Maple Grove",
+    "handle": "maple-grove",
+    "price": "22.00",
+    "variant_id": "99000000000002",
+    "active": true,
+    "availability_type": "always",
+    "palette": "sage",
+    "traits": {
+      "brew_method": [
+        "drip",
+        "french press",
+        "more than one"
+      ],
+      "flavor_notes": [
+        "nutty",
+        "caramel",
+        "chocolatey"
+      ],
+      "roast_level": [
+        "medium"
+      ],
+      "caffeine_level": [
+        "regular"
+      ],
+      "milk_preference": [
+        "black",
+        "dairy",
+        "non-dairy"
+      ]
+    },
+    "style": "balanced"
+  },
+  {
+    "key": "bold_nightfall",
+    "title": "Nightfall Roast",
+    "handle": "nightfall-roast",
+    "price": "23.00",
+    "variant_id": "99000000000003",
+    "active": true,
+    "availability_type": "always",
+    "palette": "slate",
+    "traits": {
+      "brew_method": [
+        "espresso",
+        "french press",
+        "drip"
+      ],
+      "flavor_notes": [
+        "earthy",
+        "spicy",
+        "chocolatey"
+      ],
+      "roast_level": [
+        "dark"
+      ],
+      "caffeine_level": [
+        "regular",
+        "high-caffeine"
+      ],
+      "milk_preference": [
+        "black",
+        "dairy",
+        "non-dairy"
+      ]
+    },
+    "style": "bold"
+  },
+  {
+    "key": "bright_orchard",
+    "title": "Orchard Bloom",
+    "handle": "orchard-bloom",
+    "price": "25.00",
+    "variant_id": "99000000000004",
+    "active": true,
+    "availability_type": "monthly",
+    "palette": "berry",
+    "traits": {
+      "brew_method": [
+        "pour-over",
+        "cold brew"
+      ],
+      "flavor_notes": [
+        "berry",
+        "fruity",
+        "floral"
+      ],
+      "roast_level": [
+        "light",
+        "medium"
+      ],
+      "caffeine_level": [
+        "regular",
+        "high-caffeine"
+      ],
+      "milk_preference": [
+        "black",
+        "non-dairy"
+      ]
+    },
+    "style": "bright"
+  },
+  {
+    "key": "balanced_ember",
+    "title": "Ember & Cocoa",
+    "handle": "ember-and-cocoa",
+    "price": "24.00",
+    "variant_id": "99000000000005",
+    "active": true,
+    "availability_type": "monthly",
+    "palette": "terracotta",
+    "traits": {
+      "brew_method": [
+        "espresso",
+        "drip",
+        "french press"
+      ],
+      "flavor_notes": [
+        "chocolatey",
+        "nutty",
+        "caramel"
+      ],
+      "roast_level": [
+        "medium",
+        "dark"
+      ],
+      "caffeine_level": [
+        "regular"
+      ],
+      "milk_preference": [
+        "dairy",
+        "non-dairy",
+        "black"
+      ]
+    },
+    "style": "balanced"
+  },
+  {
+    "key": "balanced_decaf",
+    "title": "Evening Decaf",
+    "handle": "evening-decaf",
+    "price": "22.00",
+    "variant_id": "99000000000006",
+    "active": true,
+    "availability_type": "always",
+    "palette": "cocoa",
+    "traits": {
+      "brew_method": [
+        "drip",
+        "espresso",
+        "french press"
+      ],
+      "flavor_notes": [
+        "chocolatey",
+        "nutty",
+        "caramel"
+      ],
+      "roast_level": [
+        "medium",
+        "dark"
+      ],
+      "caffeine_level": [
+        "decaf"
+      ],
+      "milk_preference": [
+        "dairy",
+        "non-dairy",
+        "black"
+      ]
+    },
+    "style": "balanced"
+  },
+  {
+    "key": "bold_seasonal",
+    "title": "Hearth Reserve",
+    "handle": "hearth-reserve",
+    "price": "26.00",
+    "variant_id": "99000000000007",
+    "active": false,
+    "availability_type": "monthly",
+    "palette": "cocoa",
+    "traits": {
+      "brew_method": [
+        "espresso",
+        "french press"
+      ],
+      "flavor_notes": [
+        "earthy",
+        "spicy"
+      ],
+      "roast_level": [
+        "dark"
+      ],
+      "caffeine_level": [
+        "regular"
+      ],
+      "milk_preference": [
+        "black",
+        "dairy"
+      ]
+    },
+    "style": "bold"
+  },
+  {
+    "key": "bright_mistline",
+    "title": "Mistline Decaf",
+    "handle": "mistline-decaf",
+    "price": "23.00",
+    "variant_id": "99000000000008",
+    "active": true,
+    "availability_type": "always",
+    "palette": "gold",
+    "style": "bright",
+    "traits": {
+      "brew_method": [
+        "pour-over",
+        "cold brew",
+        "drip"
+      ],
+      "flavor_notes": [
+        "citrus",
+        "fruity",
+        "floral"
+      ],
+      "roast_level": [
+        "light",
+        "medium"
+      ],
+      "caffeine_level": [
+        "decaf"
+      ],
+      "milk_preference": [
+        "black",
+        "non-dairy",
+        "other"
+      ]
+    }
+  },
+  {
+    "key": "bold_midnight",
+    "title": "Midnight Decaf",
+    "handle": "midnight-decaf",
+    "price": "24.00",
+    "variant_id": "99000000000009",
+    "active": true,
+    "availability_type": "always",
+    "palette": "slate",
+    "style": "bold",
+    "traits": {
+      "brew_method": [
+        "espresso",
+        "french press",
+        "drip"
+      ],
+      "flavor_notes": [
+        "spicy",
+        "earthy",
+        "chocolatey"
+      ],
+      "roast_level": [
+        "dark"
+      ],
+      "caffeine_level": [
+        "decaf"
+      ],
+      "milk_preference": [
+        "black",
+        "dairy",
+        "other"
+      ]
+    }
+  }
+]

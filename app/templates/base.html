@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{% block title %}Coffee Atlas · Recommendation Lab{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="/" aria-label="Coffee Atlas home"><span class="brand-mark" aria-hidden="true">✳</span> COFFEE <span class="brand-light">ATLAS</span></a>
+      <span class="header-label">THE RECOMMENDATION LAB <span class="header-dot">●</span> LOCAL DEMONSTRATION</span>
+    </div>
+  </header>
+  <main>{% block main %}{% endblock %}</main>
+  <footer class="footer"><div class="container"><strong>COFFEE ATLAS</strong><span>Independent engineering demonstration · All coffees and product identifiers are synthetic.</span><span>Built with Flask · Python · SQLite</span></div></footer>
+</body>
+</html>

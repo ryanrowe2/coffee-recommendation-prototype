@@ -1,0 +1,28 @@
+# QA constraints: pinned Python 3.12 validated snapshot; used by CI and Docker verification.
+# Versions require compatibility verification on Python 3.11 and 3.13; not a hash-locked wheel inventory.
+beautifulsoup4==4.15.0
+blinker==1.9.0
+build==1.6.1
+click==8.5.1
+coverage==7.17.2
+Flask==3.1.3
+greenlet==3.5.6
+iniconfig==2.3.1
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.4
+packaging==26.3
+playwright==1.56.0
+pluggy==1.7.0
+pyee==13.0.1
+Pygments==2.21.0
+pyproject_hooks==1.3.3
+pytest==9.2.0
+pytest-cov==7.1.0
+ruff==0.17.4
+setuptools==84.2.1
+soupsieve==4.1
+typing_extensions==4.16.0
+waitress==3.0.2
+Werkzeug==3.1.9
+wheel==0.48.0
