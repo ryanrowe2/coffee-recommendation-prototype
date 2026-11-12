@@ -1,6 +1,6 @@
 # Validation, security, and local operations
 
-The original v1.0.0 release passed real Flask, Waitress, HTTP and Chromium verification; see its [archived certification](final-verification.md). The **current v1.0.3 release also passed** its full dependency-enabled gate on November 11, 2026: **264 tests passed, zero skips; 95.14% application coverage; strict exit 0**. See [v1.0.3 maintenance verification](maintenance-verification-v1.0.3.md), the bundled [machine-readable gate result](evidence/v1.0.3-local-gate.json), and [release acceptance](release-acceptance.md). Hosted GitHub Actions remains unverified until owner-authorized publication.
+The original v1.0.0 release passed real Flask, Waitress, HTTP and Chromium verification; see its [archived certification](final-verification.md). The **current v1.0.3 release also passed** its full dependency-enabled gate on November 11, 2026: **264 tests passed, zero skips; 95.14% application coverage; strict exit 0**. See [v1.0.3 maintenance verification](maintenance-verification-v1.0.3.md), the bundled [machine-readable gate result](evidence/v1.0.3-local-gate.json), and [release acceptance](release-acceptance.md). The [post-merge hosted GitHub Actions run](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273) subsequently passed all four required jobs, with **265 tests, zero skips and 95.16% application coverage**, and uploaded six screenshots plus the gate JSON.
 
 ## Repeat verification
 
@@ -13,7 +13,7 @@ python scripts/verify_release.py
 
 The strict command requires zero skipped tests, at least 90% core coverage and 80% complete application coverage, Ruff lint and formatting, byte-identical wheel rebuilds, package assets, a clean wheel installation, live Flask/Waitress workflows and a real browser journey. Offline mode deliberately exits 2. Ordinary pytest may skip unavailable integration modules; the strict runner rejects those skips.
 
-`requirements-verified.txt` records the pinned Python 3.12 QA validation environment and is used as a pip constraints input by the current Docker and CI configurations. It is not a hash-locked multi-platform dependency artifact. `pyproject.toml` declares supported Python 3.11–3.13 dependencies. Hosted CI covers that interpreter matrix after publication. The v1.0.0 and current v1.0.3 local certifications were performed on Python 3.12.14. The declared Python 3.11/3.13 CI matrix has not yet run on GitHub.
+`requirements-verified.txt` records the pinned Python 3.12 QA validation environment and is used as a pip constraints input by the current Docker and CI configurations. It is not a hash-locked multi-platform dependency artifact. `pyproject.toml` declares supported Python 3.11–3.13 dependencies. Hosted CI verified the Python 3.11/3.12/3.13 matrix on the current protected `main` revision. The v1.0.0 and initial v1.0.3 local certifications were performed on Python 3.12.14; the later hosted Chromium job ran on Python 3.13.
 
 ## Screenshot provenance
 

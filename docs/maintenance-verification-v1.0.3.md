@@ -59,6 +59,4 @@ Its external JSON/log and SHA-256 manifest bind that result to the finished
 archive. These avoid a circular archive hash inside the archive itself.
 The pre-certification reports in historical documents retain their original scope.
 
-**Publication decision:** Ready for publication approval after successful final
-archive verification. GitHub has not been modified; hosted Actions will follow
-owner-authorized publication.
+**Current publication status (November 12, 2026):** The original 264-test table above remains the historical local v1.0.3 certification record. The approved project is now published. Following a narrowly scoped favicon and CI-artifact fix in [PR #4](https://github.com/ryanrowe2/coffee-recommendation-prototype/pull/4), [hosted GitHub Actions on protected `main`](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273) passed all four required jobs: **265 tests, zero skips, 95.16% application coverage**, and an uploaded artifact containing six screenshots and the release-gate JSON. The local archive and hosted main revisions have distinct test counts; both results are preserved with their provenance.

@@ -30,7 +30,7 @@ This matrix was developed after examining the original Python demo and the techn
 - Synthetic catalog validation and active flag filtering are deterministic.
 - Mock Typeform signed-webhook requests, duplicate tokens, and conflicting tokens are handled in code and covered by tests.
 - Responsive results cards and illustrative cart links use no protected customer assets.
-- Configuration and failure-path behavior are documented, with CI configured for execution after publication.
+- Configuration and failure-path behavior are documented; the published repository's protected `main` has a verified green Python 3.11/3.12/3.13 and Chromium CI matrix ([successful run](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273)).
 
 ## Not claimed as completed
 

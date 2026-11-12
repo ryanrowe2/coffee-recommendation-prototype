@@ -60,7 +60,7 @@ Product illustrations are local inline SVG and CSS. Variant identifiers are synt
 
 The repository includes tests for caffeine eligibility, structured style selection, order-insensitive fingerprints, catalog digest provenance, concurrent local-form idempotency, path symlinks, Unicode and accessibility contrasts, as well as vocabulary/alias normalization, malformed payloads, Typeform field refs, HMAC signing and tampering, catalog schemas, stable rank order, tie behavior, match explanations, absent/duplicate submissions, SQLite persistence, and injection-shaped identifiers. Its Flask endpoint, advertised Waitress subprocess and real-Chromium browser tests additionally exercise form CSRF, browser redirects, health endpoints, signed webhooks, idempotent replays, API lookup, debug-route absence, payload limits, HTML and CORS controls.
 
-The final dependency-enabled session executed the complete Flask, HTTP, Waitress and Chromium suites with zero skips. Browser images were captured from the running application over loopback HTTP. See [current v1.0.3 maintenance verification](maintenance-verification-v1.0.3.md) for commands, coverage and evidence; [archived v1.0.0 verification](final-verification.md) is retained separately. Hosted CI will be checked after publication authorization.
+The final exact-archive local certification executed Flask, HTTP, Waitress and Chromium suites with **264 tests and zero skips**. Following publication, the final protected-branch [GitHub Actions run](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273) passed all four required jobs (Python 3.11/3.12/3.13 and Chromium), **265 tests with zero skips**, and **95.16% application coverage**. It uploaded six live-server browser screenshots and a machine-readable release report. See [v1.0.3 local certification history](maintenance-verification-v1.0.3.md) for local commands and evidence; [archived v1.0.0 verification](final-verification.md) is retained separately.
 
 ## 10. Original production architecture proposal
 
@@ -84,11 +84,11 @@ For production, further engineering is required: identity/privacy review, retent
 
 ## 13. Limitations
 
-No real client products or prices, real checkout, production storefront UI, AI rankings, custom Shopify app, real survey-account configuration, customer feedback, analytics, measured conversion improvement, deployment history or production reliability claims. The local screenshots document rendered code and not a production storefront. The exact **v1.0.3** application passed Flask, Waitress, real HTTP and Chromium tests with **264 passing tests and zero skips**; see [current verification](maintenance-verification-v1.0.3.md). Hosted CI awaits owner-approved publication.
+No real client products or prices, real checkout, production storefront UI, AI rankings, custom Shopify app, real survey-account configuration, customer feedback, analytics, measured conversion improvement, deployment history or production reliability claims. The local screenshots document rendered code and not a production storefront. The exact **v1.0.3** local archive passed Flask, Waitress, real HTTP and Chromium tests with **264 passing tests and zero skips**; see [local verification](maintenance-verification-v1.0.3.md). The current published revision passed the [hosted strict release gate](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273) with **265 tests, zero skips, and 95.16% application coverage**.
 
 ## 14. Potential future enhancements
 
-After owner-approved publication, verify the existing hosted CI matrix. Future work may consider a small feedback endpoint, better retention controls, accessibility testing, a validated catalog update process, or externally integrated recommendations—each added in response to a demonstrable requirement rather than for feature count.
+The published Python matrix and Chromium gate have been verified on protected `main`. Optional future work may consider a small feedback endpoint, better retention controls, accessibility testing, a validated catalog update process, or externally integrated recommendations—each added in response to a demonstrable requirement rather than for feature count.
 
 ## Engineering significance
 
