@@ -38,6 +38,19 @@ def test_health(client):
     assert r.status_code == 200 and r.json["status"] == "ok" and "secret" not in str(r.json)
 
 
+def test_favicon_routes_are_successful(client):
+    html = client.get("/")
+    assert b'rel="icon" type="image/svg+xml" href="/static/favicon.svg"' in html.data
+    direct = client.get("/static/favicon.svg")
+    assert direct.status_code == 200
+    assert direct.mimetype == "image/svg+xml"
+    assert b"<svg" in direct.data
+    fallback = client.get("/favicon.ico")
+    assert fallback.status_code == 302
+    assert fallback.headers["Location"] == "/static/favicon.svg"
+    assert client.get("/favicon.ico", follow_redirects=True).status_code == 200
+
+
 def test_landing_page(client):
     r = client.get("/")
     assert r.status_code == 200 and b"perfect cup" in r.data
