@@ -1,8 +1,24 @@
 # Coffee Atlas — Coffee Recommendation Prototype
 
+[![Python checks](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/workflows/ci.yml)
+
 **A local-first Flask application that turns coffee preferences into three explainable, deterministic product recommendations.**
 
+**Hosted verification:** **265 passing tests, zero skips, 95.16% application coverage**, with all four required GitHub Actions checks green on `main` (Python 3.11/3.12/3.13 and Chromium). [Inspect the verified run](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273).
+
 An engineering portfolio case study developed from an earlier coffee-quiz prototype and an associated technical architecture proposal. The original project concept concerned a coffee quiz for a commerce storefront; this repository is an **independent demonstration**, not a live client website or production deployment.
+
+## At a glance
+
+| Focus | Implemented and verified |
+|---|---|
+| Application | Flask + Jinja, SQLite, responsive desktop/mobile interface |
+| Recommendation engine | Deterministic top-three ranking with explainable score breakdowns and caffeine eligibility |
+| Integrations and safety | Signed Typeform-compatible webhooks, validated inputs, CSRF, idempotent persistence |
+| Quality evidence | [4/4 hosted CI checks](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273), 265 passing tests, 95.16% full-app / 95.73% core coverage |
+| Engineering detail | [Technical case study](docs/technical-case-study.md) · [Architecture](docs/architecture.md) · [Run locally](#quick-start) |
+
+## Product walkthrough
 
 ![Live HTTP Coffee Atlas preference-entry interface](docs/screenshots/preference-entry-desktop.png)
 
@@ -13,7 +29,7 @@ An engineering portfolio case study developed from an earlier coffee-quiz protot
 - **Data integrity:** controlled synthetic product catalog, active-product filtering, SQLite persistence with enforced foreign keys, and transaction-safe webhook and local-form idempotency.
 - **Full-stack UX:** a responsive preference form and a browser-accessible, server-rendered results page with three illustrated product cards.
 - **Commerce integration design:** illustrative Shopify cart permalinks constructed from synthetic variant identifiers on the reserved `.example` domain; no storefront or checkout access is required.
-- **Delivery discipline:** automated unit/integration tests, CI configuration, explicit tradeoffs, technical architecture, and operational documentation.
+- **Delivery discipline:** 265 passing tests in hosted Chromium certification, all four required CI checks passing, reproducible packaging, explicit tradeoffs, architecture, and operational documentation.
 
 ### Results experience
 
@@ -36,7 +52,7 @@ python -m app
 
 Visit **http://127.0.0.1:5050**, select preferences, and submit. Explore the three ranked cards, matching explanations, and the associated JSON API via the results page.
 
-For the pinned QA dependency snapshot used by CI and Docker, first install the pinned build tools with `python -m pip install -c requirements-verified.txt setuptools wheel`, then install with `python -m pip install --no-build-isolation -c requirements-verified.txt -e '.[dev]'`. The snapshot was validated on Python 3.12; the supported interpreter matrix must be tested independently. For browser certification, install Chromium with `python -m playwright install chromium`. An existing compatible Chromium executable can be selected with `COFFEE_BROWSER_PATH`. This session used Playwright 1.56.0 with its official Chromium headless shell 141.0.7390.37 because the system browser's Unix-socket startup was restricted. The snapshot records the validation environment; `pyproject.toml` remains the supported dependency contract.
+For the pinned QA dependency snapshot used by CI and Docker, first install the pinned build tools with `python -m pip install -c requirements-verified.txt setuptools wheel`, then install with `python -m pip install --no-build-isolation -c requirements-verified.txt -e '.[dev]'`. The pinned local snapshot was validated on Python 3.12; GitHub Actions has since passed its Python 3.11/3.12/3.13 matrix. For browser certification, install Chromium with `python -m playwright install chromium`. An existing compatible Chromium executable can be selected with `COFFEE_BROWSER_PATH`. The earlier local certification used Playwright 1.56.0 with its official Chromium headless shell 141.0.7390.37 because the system browser's Unix-socket startup was restricted. The snapshot records the validation environment; `pyproject.toml` remains the supported dependency contract.
 
 For Flask's development server, the verified alternate command is `python -m flask --app app:create_app run --host 127.0.0.1 --port 5050`.
 
@@ -55,7 +71,7 @@ python scripts/verify_release.py --offline  # offline checks: deliberately retur
 python scripts/verify_release.py            # strict gate: exit 0 only with full runtime tests
 ```
 
-The CI workflow requires Flask/Waitress, asserts a fixed mandatory integration-test inventory, runs the no-skips tests and Ruff lint/format on Python 3.11, 3.12 and 3.13, checks a clean wheel installation, and performs a **strict full release gate** with Chromium (form, API, clipboard and mobile layout). CI cannot be observed before the repository exists. The required sequence is **local release gate → owner approval → publication → hosted CI confirmation**. See [the finite release-acceptance protocol](docs/release-acceptance.md), including an optional reproducible Docker-based QA environment. **No hosted CI has run yet.**
+The [hosted GitHub Actions workflow](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/workflows/ci.yml) runs Flask/Waitress integration tests, Ruff lint/format, and a clean wheel installation on Python **3.11, 3.12, and 3.13**, then executes the **strict no-skips Chromium release gate** (form, API, clipboard, and responsive layout). All four jobs passed on published `main` at [commit `6daaf9f`](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273), with **265 passing tests**, **95.16% application coverage**, and six browser screenshots plus a machine-readable gate report uploaded as an Actions artifact. See [release acceptance](docs/release-acceptance.md) for reproducible steps and the optional Docker QA environment.
 
 ### Try the signed webhook
 
@@ -130,4 +146,4 @@ The repository intentionally excludes the confidential partner proposal and orig
 
 ## Maintenance and release status
 
-Version **1.0.0** was certified in a separate Work environment. Version **1.0.1** added persistent local session signing, trusted hosts, mandatory test collection, and SHA-pinned Actions. Version **1.0.2** further hardened QA HTTP isolation, clean-install catalog independence, the verification container, and reproducible distribution tooling. Version **1.0.3** hardens malformed CORS-origin rejection, fixes test connection cleanup, and closes a documentation provenance gap. **Version 1.0.3 passed full local strict HTTP/browser certification: 264 tests, zero skips, 95.14% application coverage and 95.73% core coverage.** See [current maintenance verification](docs/maintenance-verification-v1.0.3.md). No GitHub publication or Actions run is implied.
+Version **1.0.0** was certified in a separate Work environment. Version **1.0.1** added persistent local session signing, trusted hosts, mandatory test collection, and SHA-pinned Actions. Version **1.0.2** hardened QA HTTP isolation, clean-install catalog independence, the verification container, and reproducible distribution tooling. Version **1.0.3** hardened malformed CORS-origin rejection, test connection cleanup, and documentation provenance. Its original exact-archive local certification passed **264 tests, 95.14% application coverage, and 95.73% core coverage**. The subsequently published GitHub revision added a favicon regression and browser-evidence upload correction; its [successful hosted `main` run](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273) passed **265 tests, zero skips, 95.16% application coverage**, and all four required checks. See [local certification history](docs/maintenance-verification-v1.0.3.md) and [release acceptance](docs/release-acceptance.md).
