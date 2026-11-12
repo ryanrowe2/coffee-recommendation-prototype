@@ -51,14 +51,14 @@ If a test fails, fix its specific cause; avoid changing unrelated features. Repe
 
 ## GitHub sequence (no circular approval condition)
 
-The repository must not be created or modified until expressly approved by the account owner.
+Repository creation and publication were expressly authorized by the account owner; future changes remain subject to the protected pull-request workflow.
 
-- **Before approval:** obtain a passing local release gate using a runtime with network/package access. Inspect the report and final archive. **Do not claim GitHub CI ran**.
-- **After approval/publication:** GitHub Actions checks the Python matrix and runs the strict full gate in a Chromium-enabled job. Verify the resulting checks and captured *live-server* screenshots. Resolve actual CI failures before treating the published repository as operationally verified.
+- **Local certification (completed):** The exact approved v1.0.3 archive passed the strict dependency-enabled gate before publication. This is historical local evidence, not an assertion about hosted CI.
+- **Publication and hosted verification (completed):** The public repository runs the required Python 3.11/3.12/3.13 matrix and Chromium full gate. The initial browser favicon failure and hidden evidence-upload issue were corrected through protected [PR #4](https://github.com/ryanrowe2/coffee-recommendation-prototype/pull/4); the [post-merge run](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273) passed all four jobs and saved six screenshots plus the release JSON.
 - **No endless re-audits:** a green gate plus green published CI and no known high-priority defects is the practical stopping condition. Later fixes are ordinary maintenance, not a reason to reopen historical closed findings.
 
 ## Certification status
 
-The original **v1.0.0** release passed its local gate on November 11, 2026; see the [archived certification](final-verification.md). That historical record does **not** certify later revisions. The **v1.0.3 candidate independently passed its own full dependency-enabled gate**, including verification from the final extracted ZIP: **264 tests passed with zero skips, 95.14% application coverage, and exit code 0**. See [current v1.0.3 maintenance verification](maintenance-verification-v1.0.3.md) and the [bundled gate result](evidence/v1.0.3-local-gate.json). The local publication-approval checkpoint is therefore satisfied. **Hosted GitHub Actions remains pending** owner-authorized publication.
+The original **v1.0.0** release passed its local gate on November 11, 2026; see the [archived certification](final-verification.md). The **v1.0.3 exact-archive local certification** subsequently passed with **264 tests, zero skips, 95.14% application coverage, and exit code 0**; see [local maintenance verification](maintenance-verification-v1.0.3.md) and its [bundled gate result](evidence/v1.0.3-local-gate.json). After publication and the targeted CI correction, the [protected `main` hosted release run](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273) passed **all four required jobs**, **265 tests, zero skips, 95.16% application coverage**, and uploaded six screenshots plus release evidence. The portfolio release has satisfied both the local and hosted acceptance checkpoints.
 
 This repository remains a self-contained local proof of engineering work with synthetic data.
