@@ -56,6 +56,7 @@ EXPECTED_WHEEL_ASSETS = (
     "app/templates/base.html",
     "app/static/style.css",
     "app/static/app.js",
+    "app/static/favicon.svg",
 )
 
 

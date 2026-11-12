@@ -18,7 +18,7 @@ packages = ["app"]
 include-package-data = false
 
 [tool.setuptools.package-data]
-app = ["data/*.json", "templates/*.html", "static/*.css", "static/*.js"]
+app = ["data/*.json", "templates/*.html", "static/*.css", "static/*.js", "static/*.svg"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

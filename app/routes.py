@@ -65,6 +65,11 @@ def register_routes(app: Flask) -> None:
         app.logger.exception("Internal request failure")
         return jsonify({"status": "error", "message": "An internal error occurred."}), 500
 
+    @app.get("/favicon.ico")
+    def favicon() -> Any:
+        # Browsers may request this fallback even when the page advertises its SVG icon.
+        return redirect(url_for("static", filename="favicon.svg"), code=302)
+
     @app.get("/health")
     def health() -> tuple[Any, int]:
         return jsonify({"status": "ok", "service": "coffee-recommendation-prototype", "mode": cfg.mode}), 200

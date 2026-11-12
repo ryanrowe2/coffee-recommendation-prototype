@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Coffee Atlas">
+  <rect width="64" height="64" rx="14" fill="#263e32"/>
+  <path d="M16 25h27v12c0 9-5 15-13.5 15S16 46 16 37V25z" fill="#f8f6f1"/>
+  <path d="M43 29h5c5 0 7 3 7 7s-3 8-11 8" fill="none" stroke="#f8f6f1" stroke-width="5" stroke-linecap="round"/>
+  <path d="M22 20c-3-4 3-5 0-9M33 20c-3-4 3-5 0-9" fill="none" stroke="#b59a70" stroke-width="3" stroke-linecap="round"/>
+</svg>
