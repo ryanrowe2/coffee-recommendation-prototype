@@ -74,4 +74,5 @@ jobs:
           path: |
             .ci_artifacts/*.png
             .ci_artifacts/release-evidence.json
-          if-no-files-found: ignore
+          include-hidden-files: true
+          if-no-files-found: error
