@@ -111,7 +111,35 @@ def test_real_chromium_form_result_api_and_clipboard(local_config):
                     lambda message: console_errors.append(message.text) if message.type == "error" else None,
                 )
                 mobile.goto(address + "/", wait_until="networkidle")
-                assert mobile.evaluate("document.documentElement.scrollWidth <= innerWidth")
+                # Visual-regression geometry: neither mobile step number may orphan its label.
+                for width in (390, 320):
+                    mobile.set_viewport_size({"width": width, "height": 844})
+                    assert mobile.evaluate("document.documentElement.scrollWidth <= innerWidth")
+                    steps = mobile.locator(".hero-proof .proof-step")
+                    assert steps.count() == 2
+                    assert [steps.nth(i).locator(".proof-label").inner_text() for i in range(2)] == [
+                        "Share your preferences",
+                        "Discover your matches",
+                    ]
+                    rectangles = []
+                    for i in range(2):
+                        step = steps.nth(i)
+                        number = step.locator(".proof-circle").bounding_box()
+                        label = step.locator(".proof-label").bounding_box()
+                        rectangle = step.bounding_box()
+                        assert number and label and rectangle
+                        assert label["x"] >= number["x"] + number["width"]
+                        assert label["x"] + label["width"] <= width - 5
+                        assert abs(
+                            (number["y"] + number["height"] / 2)
+                            - (label["y"] + label["height"] / 2)
+                        ) <= 3
+                        assert step.locator(".proof-label").evaluate(
+                            "el => getComputedStyle(el).whiteSpace"
+                        ) == "nowrap"
+                        rectangles.append(rectangle)
+                    assert rectangles[1]["y"] >= rectangles[0]["y"] + rectangles[0]["height"]
+                mobile.set_viewport_size({"width": 390, "height": 844})
                 if os.environ.get("COFFEE_CAPTURE_BROWSER") == "1":
                     mobile.screenshot(path=".ci_artifacts/entry-live-mobile.png", full_page=True)
                 mobile.locator("#caffeine_level").select_option("decaf")
