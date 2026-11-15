@@ -149,7 +149,15 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible {
   font-weight:700;
 }
 
+.proof-step {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+}
+
 .proof-circle {
+  flex:0 0 31px;
   border:1px solid #adb3a9;
   border-radius:50%;
   width:31px;
@@ -755,8 +763,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible {
     font-size:15px;
   }
   .hero-proof {
-    font-size:10px;
-    flex-wrap:wrap;
+    font-size:11px;
   }
   .hero-art {
     height:280px;
@@ -842,4 +849,18 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible {
   clip:rect(0, 0, 0, 0);
   white-space:nowrap;
   border:0;
+}
+
+/* Keep both progress steps intact at mobile and narrow-tablet widths. */
+@media(max-width:980px) {
+  .hero-proof {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+  }
+  .proof-arrow {
+    display:inline-block;
+    margin:0 0 0 10px;
+    transform:rotate(90deg);
+  }
 }
