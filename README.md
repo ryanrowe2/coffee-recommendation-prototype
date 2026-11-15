@@ -1,5 +1,11 @@
 # Coffee Atlas — Coffee Recommendation Prototype
 
+**Why this project matters:** It turns a customer's coffee preferences into three explainable choices, while keeping recommendation logic deterministic and the form-to-result workflow testable.
+
+**What to inspect first:** The [product walkthrough](#product-walkthrough) shows the user experience; [quick start](#quick-start) lets you run it locally. The webhook, scoring, and verification sections below explain the engineering choices.
+
+**Scope:** Independent portfolio demonstration, not a deployed client storefront.
+
 [![Python checks](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/workflows/ci.yml)
 
 **A local-first Flask application that turns coffee preferences into three explainable, deterministic product recommendations.**
