@@ -39,7 +39,7 @@ An engineering portfolio case study developed from an earlier coffee-quiz protot
 
 ![Live HTTP results page with three ranked product cards](docs/screenshots/recommendations-desktop.png)
 
-> **Screenshot provenance:** Verified Chromium desktop and mobile captures of the Flask application over live loopback HTTP, associated with the November 11, 2026 v1.0.3 certification. Comparison with earlier v1.0.0 captures found identical pixels and matching file hashes: these images show the unchanged interface, not a new visual redesign. See [current verification](docs/maintenance-verification-v1.0.3.md), [operations notes](docs/quality-and-operations.md) and `docs/screenshots/provenance.json`.
+> **Screenshot provenance:** The committed screenshots are historical captures of the November 11, 2026 v1.0.3 loopback-HTTP certification. Comparison with v1.0.0 found matching pixels and hashes *at that time*. They are preserved, not silently replaced by later CSS improvements. To review the current mobile and desktop interface, open the latest successful [Python checks workflow](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/workflows/ci.yml) and its `verified-flask-browser-screenshots` artifact. See [v1.0.3 verification](docs/maintenance-verification-v1.0.3.md), [operations notes](docs/quality-and-operations.md) and `docs/screenshots/provenance.json`.
 
 ## Quick start
 
