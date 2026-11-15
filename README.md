@@ -8,9 +8,7 @@
 
 [![Python checks](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/workflows/ci.yml)
 
-**A local-first Flask application that turns coffee preferences into three explainable, deterministic product recommendations.**
-
-**Hosted verification:** **265 passing tests, zero skips, 95.16% application coverage**, with all four required GitHub Actions checks green on `main` (Python 3.11/3.12/3.13 and Chromium). [Inspect the verified run](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273).
+**Verification evidence:** [Hosted Python and browser checks](https://github.com/ryanrowe2/coffee-recommendation-prototype/actions/runs/43185857273); detailed test and coverage figures appear in [Tests](#tests) and [Maintenance and release status](#maintenance-and-release-status).
 
 An engineering portfolio case study developed from an earlier coffee-quiz prototype and an associated technical architecture proposal. The original project concept concerned a coffee quiz for a commerce storefront; this repository is an **independent demonstration**, not a live client website or production deployment.
 
