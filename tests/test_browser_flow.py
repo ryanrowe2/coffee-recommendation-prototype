@@ -130,13 +130,14 @@ def test_real_chromium_form_result_api_and_clipboard(local_config):
                         assert number and label and rectangle
                         assert label["x"] >= number["x"] + number["width"]
                         assert label["x"] + label["width"] <= width - 5
-                        assert abs(
-                            (number["y"] + number["height"] / 2)
-                            - (label["y"] + label["height"] / 2)
-                        ) <= 3
-                        assert step.locator(".proof-label").evaluate(
-                            "el => getComputedStyle(el).whiteSpace"
-                        ) == "nowrap"
+                        assert (
+                            abs((number["y"] + number["height"] / 2) - (label["y"] + label["height"] / 2))
+                            <= 3
+                        )
+                        assert (
+                            step.locator(".proof-label").evaluate("el => getComputedStyle(el).whiteSpace")
+                            == "nowrap"
+                        )
                         rectangles.append(rectangle)
                     assert rectangles[1]["y"] >= rectangles[0]["y"] + rectangles[0]["height"]
                 mobile.set_viewport_size({"width": 390, "height": 844})
